@@ -1,7 +1,10 @@
 import 'package:dentsu_lms/constants/colors.dart';
 import 'package:dentsu_lms/constants/funtions.dart';
+import 'package:dentsu_lms/models/chartdata.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
 
 class Leads extends StatelessWidget {
   const Leads({
@@ -10,6 +13,48 @@ class Leads extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<charts.Series<ChartData, int>> series = [
+      charts.Series(
+        id: 'Accounts',
+        data: [
+          ChartData(0, 0),
+          ChartData(1, 150),
+          ChartData(2, 200),
+          ChartData(3, 180),
+          ChartData(4, 220),
+        ],
+        colorFn: (_, __) => charts.ColorUtil.fromDartColor(primaryColor),
+        domainFn: (ChartData data, _) => data.month,
+        measureFn: (ChartData data, _) => data.value,
+      ),
+      charts.Series(
+        id: 'Insurance',
+        data: [
+          ChartData(0, 0),
+          ChartData(1, 90),
+          ChartData(2, 100),
+          ChartData(3, 110),
+          ChartData(4, 120),
+        ],
+        colorFn: (_, __) => charts.ColorUtil.fromDartColor(greenColor),
+        domainFn: (ChartData data, _) => data.month,
+        measureFn: (ChartData data, _) => data.value,
+      ),
+      charts.Series(
+        id: 'Credits',
+        data: [
+          ChartData(0, 0),
+          ChartData(1, 130),
+          ChartData(2, 140),
+          ChartData(3, 135),
+          ChartData(4, 150),
+        ],
+        colorFn: (_, __) => charts.ColorUtil.fromDartColor(blueColor),
+        domainFn: (ChartData data, _) => data.month,
+        measureFn: (ChartData data, _) => data.value,
+      ),
+    ];
+
     return Container(
       width: 280.0,
       margin: const EdgeInsets.symmetric(horizontal: 4),
@@ -110,6 +155,15 @@ class Leads extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedBox(
+                height: 220,
+                child: charts.LineChart(
+                  series,
+                  animate: true,
+                  defaultRenderer:
+                      charts.LineRendererConfig(includePoints: false),
+                ),
+              )
             ],
           )
         ],

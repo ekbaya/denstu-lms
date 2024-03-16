@@ -1,6 +1,8 @@
 import 'package:dentsu_lms/constants/colors.dart';
 import 'package:dentsu_lms/constants/funtions.dart';
 import 'package:dentsu_lms/widgets/home.dart';
+import 'package:dentsu_lms/widgets/leadsPage.dart';
+import 'package:dentsu_lms/widgets/quotes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_search_bar/easy_search_bar.dart';
@@ -16,11 +18,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
-  static List<Widget> _widgetOptions = <Widget>[
-    HomeWidget(),
-    Text('Group Page'),
-    Text('Leads Page'),
-    Text('Profile Page'),
+  static final List<Widget> _widgetOptions = <Widget>[
+    const HomeWidget(),
+    const LeadsPage(),
+    const QuotesPage(),
+    const Text('Profile Page'),
   ];
 
   void _onItemTapped(int index) {

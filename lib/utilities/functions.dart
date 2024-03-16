@@ -13,3 +13,7 @@ Color getColor(String category) {
       return Colors.grey;
   }
 }
+
+bool isEven(int number) {
+  return number % 2 == 0;
+}

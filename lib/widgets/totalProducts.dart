@@ -20,43 +20,50 @@ class TotalProducts extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Total Products",
-                style: h2Style(
-                    color: Colors.black,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w500),
-              ),
-              PopupMenuButton<String>(
-                icon: const Icon(Icons.more_horiz),
-                onSelected: (String value) {
-                  if (kDebugMode) {
-                    print('Selected: $value');
-                  }
-                },
-                itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                  const PopupMenuItem<String>(
-                    value: 'option1',
-                    child: Text('Option 1'),
-                  ),
-                  const PopupMenuItem<String>(
-                    value: 'option2',
-                    child: Text('Option 2'),
-                  ),
-                  const PopupMenuItem<String>(
-                    value: 'option3',
-                    child: Text('Option 3'),
-                  ),
-                ],
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Total Products",
+                  style: h2Style(
+                      color: Colors.black,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500),
+                ),
+                PopupMenuButton<String>(
+                  icon: const Icon(Icons.more_horiz),
+                  onSelected: (String value) {
+                    if (kDebugMode) {
+                      print('Selected: $value');
+                    }
+                  },
+                  itemBuilder: (BuildContext context) =>
+                      <PopupMenuEntry<String>>[
+                    const PopupMenuItem<String>(
+                      value: 'option1',
+                      child: Text('Option 1'),
+                    ),
+                    const PopupMenuItem<String>(
+                      value: 'option2',
+                      child: Text('Option 2'),
+                    ),
+                    const PopupMenuItem<String>(
+                      value: 'option3',
+                      child: Text('Option 3'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-          Text(
-            "Every large design company whether it’s a multi-national branding.",
-            style: hintStyle(fontSize: 12, fontWeight: FontWeight.w400),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Text(
+              "Every large design company whether it’s a multi-national branding.",
+              style: hintStyle(fontSize: 12, fontWeight: FontWeight.w400),
+            ),
           ),
           Column(
             mainAxisSize: MainAxisSize.min,

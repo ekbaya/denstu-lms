@@ -12,3 +12,4 @@ Color blueColor = const Color(0xff387EA1);
 Color deepBlueColor = const Color(0xff4339F2);
 Color greenShadeColor = const Color(0xff02A0FC);
 Color creditCardsColor = const Color(0xff59BFA3);
+Color greyColor = const Color(0xff666666);
