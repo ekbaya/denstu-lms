@@ -3,6 +3,7 @@ import 'package:dentsu_lms/constants/funtions.dart';
 import 'package:dentsu_lms/pages/leadDetails.dart';
 import 'package:dentsu_lms/pages/quoteDetails.dart';
 import 'package:dentsu_lms/utilities/functions.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -63,7 +64,28 @@ class _DataTableWithPaginationState extends State<DataTableWithPagination> {
                   },
                 ),
                 cells: [
-                  DataCell(Text('0${index + 1}')),
+                  DataCell(
+                    GestureDetector(
+                      onTap: () {
+                        if (widget.tag == "leads" || widget.tag == "home") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LeadDetailsPage(),
+                            ),
+                          );
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const QuoteDetailsPage(),
+                            ),
+                          );
+                        }
+                      },
+                      child: Text('0${index + 1}'),
+                    ),
+                  ),
                   DataCell(
                     GestureDetector(
                       onTap: () {
@@ -138,7 +160,7 @@ class _DataTableWithPaginationState extends State<DataTableWithPagination> {
                       (index) => Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 4.0),
                         child: CircleAvatar(
-                          radius: 10,
+                          radius: 15,
                           backgroundColor: currentPage == index + 1
                               ? primaryColor
                               : Colors.white,

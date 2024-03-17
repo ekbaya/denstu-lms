@@ -1,9 +1,8 @@
 import 'package:dentsu_lms/constants/colors.dart';
 import 'package:dentsu_lms/constants/funtions.dart';
+import 'package:dentsu_lms/widgets/benefits.dart';
 import 'package:dentsu_lms/widgets/quoteInfo.dart';
 import 'package:dentsu_lms/widgets/quoteSetup.dart';
-import 'package:dentsu_lms/widgets/selectField.dart';
-import 'package:dentsu_lms/widgets/setting.dart';
 import 'package:flutter/material.dart';
 
 class QuoteDetailsPage extends StatefulWidget {
@@ -62,106 +61,12 @@ class _QuoteDetailsPageState extends State<QuoteDetailsPage> {
               ),
               SizedBox(
                 width: getWidth(context),
-                height: 1000,
-                child: TabBarView(
+                height: 1300,
+                child: const TabBarView(
                   children: [
-                    const QuoteInfo(),
-                    const QuoteSetup(),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          OptionField(
-                            options: const [
-                              {
-                                "label": "KES 1,000,000",
-                                "value": "KES 1,000,000"
-                              }
-                            ],
-                            onChanged: (value) {},
-                            title: 'Inpatient Cover Limit',
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Container(
-                            width: getWidth(context),
-                            padding: const EdgeInsets.all(20),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Benefits",
-                                  style: fontStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.black),
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                Setting(
-                                  title: "Inpatient",
-                                  value: true,
-                                  onChanged: (value) {},
-                                ),
-                                Setting(
-                                  title: "Outpatient",
-                                  value: false,
-                                  onChanged: (value) {},
-                                ),
-                                Setting(
-                                  title: "No Co-payment",
-                                  value: false,
-                                  onChanged: (value) {},
-                                ),
-                                Setting(
-                                  title: "Dental",
-                                  value: false,
-                                  onChanged: (value) {},
-                                ),
-                                Setting(
-                                  title: "Optical",
-                                  value: false,
-                                  onChanged: (value) {},
-                                ),
-                                Setting(
-                                  title: "Maternity",
-                                  value: false,
-                                  onChanged: (value) {},
-                                ),
-                                Setting(
-                                  title: "Last Expense",
-                                  value: false,
-                                  onChanged: (value) {},
-                                ),
-                                Setting(
-                                  title: "Personal Accident",
-                                  value: false,
-                                  onChanged: (value) {},
-                                ),
-                                Setting(
-                                  title: "Enhanced Covid 19 Cover",
-                                  value: false,
-                                  onChanged: (value) {},
-                                ),
-                                Setting(
-                                  title: "Amref Evacuation",
-                                  value: false,
-                                  onChanged: (value) {},
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    )
+                    QuoteInfo(),
+                    QuoteSetup(),
+                    Benefits(),
                   ],
                 ),
               ),
