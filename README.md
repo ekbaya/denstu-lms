@@ -48,4 +48,9 @@ Replace `<project_directory>` with the name of the directory created during clon
 
 3. Wait for the Flutter application to build and launch on the selected device.
 
+## Test APK
+
+I have included a test APK file [app-release.apk](app-release.apk) in the root directory that you can download and install directly onto your Android device.
+
+
 Congratulations!
