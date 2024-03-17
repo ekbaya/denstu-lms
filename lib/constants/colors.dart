@@ -13,3 +13,6 @@ Color deepBlueColor = const Color(0xff4339F2);
 Color greenShadeColor = const Color(0xff02A0FC);
 Color creditCardsColor = const Color(0xff59BFA3);
 Color greyColor = const Color(0xff666666);
+Color greyTextColor = const Color(0xff333333);
+Color blackColor = const Color(0xff2D2D2D);
+Color inActiveTrackColor = const Color(0xff444444);

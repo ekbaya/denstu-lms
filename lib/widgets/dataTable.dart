@@ -1,7 +1,10 @@
 import 'package:dentsu_lms/constants/colors.dart';
 import 'package:dentsu_lms/constants/funtions.dart';
+import 'package:dentsu_lms/pages/leadDetails.dart';
+import 'package:dentsu_lms/pages/quoteDetails.dart';
 import 'package:dentsu_lms/utilities/functions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class DataTableWithPagination extends StatefulWidget {
   final String title;
@@ -51,18 +54,40 @@ class _DataTableWithPaginationState extends State<DataTableWithPagination> {
             rows: List.generate(
               9,
               (index) => DataRow(
-                  color: MaterialStateProperty.resolveWith<Color?>(
-                    (Set<MaterialState> states) {
-                      if (isEven(index + 1)) {
-                        return Colors.white;
-                      }
-                      return backgroundColor;
-                    },
+                color: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    if (isEven(index + 1)) {
+                      return Colors.white;
+                    }
+                    return backgroundColor;
+                  },
+                ),
+                cells: [
+                  DataCell(Text('0${index + 1}')),
+                  DataCell(
+                    GestureDetector(
+                      onTap: () {
+                        if (widget.tag == "leads" || widget.tag == "home") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LeadDetailsPage(),
+                            ),
+                          );
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const QuoteDetailsPage(),
+                            ),
+                          );
+                        }
+                      },
+                      child: Text(widget.person),
+                    ),
                   ),
-                  cells: [
-                    DataCell(Text('0${index + 1}')),
-                    DataCell(Text(widget.person)),
-                  ]),
+                ],
+              ),
             ),
           ),
           Padding(
