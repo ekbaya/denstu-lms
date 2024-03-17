@@ -12,7 +12,7 @@ Before you begin, make sure you have the following installed:
 ## Step 1: Clone the GitHub Project
 
 1. Clone the Flutter project from GitHub using the following command:
-   git clone https://github.com/ekbaya/denstu-lms
+   git clone https://github.com/ekbaya/denstu-lms.git
 
 2. Navigate to the cloned project directory: cd <project_directory>
 
@@ -23,6 +23,7 @@ Replace `<project_directory>` with the name of the directory created during clon
 1. Open Visual Studio Code.
 
 2. Open the cloned Flutter project folder in Visual Studio Code:
+
 - Click on "File" in the menu.
 - Select "Open Folder...".
 - Navigate to the cloned project directory and select it.
@@ -31,6 +32,7 @@ Replace `<project_directory>` with the name of the directory created during clon
 ## Step 3: Install Dependencies
 
 1. Open the terminal in Visual Studio Code:
+
 - Click on "View" in the menu.
 - Select "Terminal".
 - Choose "New Terminal".
@@ -41,6 +43,7 @@ Replace `<project_directory>` with the name of the directory created during clon
 ## Step 4: Run the Flutter Application
 
 1. Once the dependencies are installed, you can run the Flutter application:
+
 - Make sure you have a target device available (e.g., emulator, physical device) or use the VS Code's emulator.
 - Open the terminal in Visual Studio Code.
 
@@ -51,6 +54,5 @@ Replace `<project_directory>` with the name of the directory created during clon
 ## Test APK
 
 I have included a test APK file [app-release.apk](app-release.apk) in the root directory that you can download and install directly onto your Android device.
-
 
 Congratulations!
