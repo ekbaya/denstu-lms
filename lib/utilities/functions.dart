@@ -17,3 +17,10 @@ Color getColor(String category) {
 bool isEven(int number) {
   return number % 2 == 0;
 }
+
+void hideKeyboard(BuildContext context) {
+  FocusScopeNode currentFocus = FocusScope.of(context);
+  if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
+    FocusManager.instance.primaryFocus?.unfocus();
+  }
+}
