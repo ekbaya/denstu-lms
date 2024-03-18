@@ -116,7 +116,7 @@ class _BenefitsState extends State<Benefits> {
               border: Border.all(color: primaryColor, width: 3),
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -252,6 +252,24 @@ class _BenefitsState extends State<Benefits> {
                     )
                   ],
                 ),
+                Container(
+                  width: 90,
+                  height: 36,
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: primaryColor),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Buy Now",
+                      style: fontStyle(
+                          fontSize: 12,
+                          color: primaryColor,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                )
               ],
             ),
           )

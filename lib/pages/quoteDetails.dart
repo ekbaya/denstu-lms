@@ -61,7 +61,7 @@ class _QuoteDetailsPageState extends State<QuoteDetailsPage> {
               ),
               SizedBox(
                 width: getWidth(context),
-                height: 1300,
+                height: 1350,
                 child: const TabBarView(
                   children: [
                     QuoteInfo(),
